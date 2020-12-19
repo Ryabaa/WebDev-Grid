@@ -110,6 +110,7 @@ a {
           align-items: flex-end;
   -ms-grid-rows: (1fr)[9];
       grid-template-rows: repeat(9, 1fr);
+  padding: 0 20px;
 }
 
 .hero-title {
