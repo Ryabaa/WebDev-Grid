@@ -29,7 +29,7 @@ $header-font: #ffffffcc;
 .header-hero-section {
     background: url(./img/bg-image.png) center;
     background-size: cover;
-    height: 788px;
+    min-height: 788px;
     display: grid;
     grid-template-rows: 1fr 9fr;
 }
@@ -92,7 +92,7 @@ $blue-hover: #009cc2;
     justify-items: center;
     align-content: center;
     align-items: flex-end;
-    grid-template-rows: repeat(9, 1fr);
+    grid-template-rows: repeat(9, 0.7fr);
     padding: 0 20px;
 
     &-title {
@@ -125,16 +125,26 @@ $blue-hover: #009cc2;
 }
 
 $title: #373737;
+$text: #4e4e4e;
+
+@mixin title {
+    letter-spacing: 1px;
+    color: $title;
+}
+
+@mixin text {
+    color: $text;
+}
 
 @mixin section {
     background-color: white;
     display: grid;
-    grid-template-columns: 1fr 3fr 3fr 1fr;
+    grid-template-columns: 7em 3fr 3fr 7em;
     grid-template-rows: repeat(10, 1fr);
     height: 840px;
     justify-items: flex-start;
     align-items: center;
-    grid-column-gap: 50px;
+    column-gap: 30px;
 
     .section-container {
         max-width: 407px;
@@ -145,15 +155,16 @@ $title: #373737;
         row-gap: 20px;
 
         .section-title {
-            max-width: 367px;
+            max-width: 370px;
             grid-column: 2 / 3;
             font-size: 24px;
-            letter-spacing: 1px;
+            @include title;
         }
 
         .section-text {
             font-weight: 500;
             grid-column: 2 / 3;
+            @include text;
         }
 
         .section-button {
@@ -170,4 +181,49 @@ $title: #373737;
 
 .idea-section {
     @include section;
+}
+
+$light: #f5f6f7;
+
+.community-section {
+    height: 504px;
+    padding-right: 50px;
+    background: $light;
+    display: grid;
+    grid-template-columns: 7em auto 300px 300px;
+    grid-template-rows: repeat(10, 1fr);
+    align-items: center;
+    justify-items: end;
+    column-gap: 30px;
+
+    .community-container {
+        display: grid;
+        grid-template-rows: repeat(3, auto);
+        grid-column: 2 / 3;
+        row-gap: 10px;
+        justify-self: start;
+        justify-items: center;
+        grid-row: 4 / 8;
+
+        .community-title {
+            text-align: center;
+        }
+
+        .community-text {
+            text-align: center;
+            max-width: 300px;
+        }
+    }
+
+    .community-image-1 {
+        grid-row: 3 / 9;
+        grid-column: 3 / 4;
+        width: 300px;
+    }
+
+    .community-image-2 {
+        width: 300px;
+        grid-row: 3 / 9;
+        grid-column: 4 / 5;
+    }
 }
