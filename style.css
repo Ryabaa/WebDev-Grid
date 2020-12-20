@@ -368,4 +368,58 @@ a {
   grid-column: 2 / 3;
   justify-self: flex-start;
 }
+
+.newsletter-section {
+  background: url(./img/notebook-bg.png);
+  background-size: cover;
+  height: 520px;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  row-gap: 30px;
+}
+
+.newsletter-section .newsletter-title {
+  color: white;
+  text-align: center;
+  font-size: 24px;
+  letter-spacing: 1px;
+}
+
+.newsletter-section .form {
+  width: 400px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 5fr 1fr;
+      grid-template-columns: 5fr 1fr;
+}
+
+.newsletter-section .form .input {
+  text-indent: 24px;
+  border: none;
+}
+
+.newsletter-section .form .input:focus {
+  outline: none;
+  border: 1.8px solid #00afdb;
+}
+
+.newsletter-section .form .input-button {
+  cursor: pointer;
+  border: none;
+  width: 60px;
+}
+
+.newsletter-section .form .input-button .input-check {
+  width: 22px;
+  height: 20px;
+}
+
+.newsletter-section .form .input-button:focus {
+  outline: none;
+}
 /*# sourceMappingURL=style.css.map */

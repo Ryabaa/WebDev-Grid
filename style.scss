@@ -245,3 +245,51 @@ $light: #f5f6f7;
         justify-self: flex-start;
     }
 }
+
+.newsletter-section {
+    background: url(./img/notebook-bg.png);
+    background-size: cover;
+    height: 520px;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    row-gap: 30px;
+
+    .newsletter-title {
+        color: white;
+        text-align: center;
+        font-size: 24px;
+        letter-spacing: 1px;
+    }
+
+    .form {
+        width: 400px;
+        display: grid;
+        grid-template-columns: 5fr 1fr;
+
+        .input {
+            text-indent: 24px;
+            border: none;
+        }
+
+        .input:focus {
+            outline: none;
+            border: 1.8px solid #00afdb;
+        }
+
+        .input-button {
+            cursor: pointer;
+            border: none;
+            width: 60px;
+
+            .input-check {
+                width: 22px;
+                height: 20px;
+            }
+        }
+
+        .input-button:focus {
+            outline: none;
+        }
+    }
+}
