@@ -1,0 +1,33 @@
+@media (max-width: 970px) {
+  .idea,
+  .code {
+    -ms-grid-columns: 3em 3fr 3fr 3em;
+        grid-template-columns: 3em 3fr 3fr 3em;
+  }
+  .section-image {
+    width: 328px;
+    height: 391px;
+  }
+  .community {
+    -ms-grid-columns: 3em auto 1fr;
+        grid-template-columns: 3em auto 1fr;
+  }
+  .community-image-1 {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 2;
+    grid-row: 3 / 5;
+    -ms-grid-column-align: center;
+        justify-self: center;
+  }
+  .community-image-2 {
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 1;
+    grid-column: 3 / 4;
+    -ms-grid-row: 7;
+    -ms-grid-row-span: 2;
+    grid-row: 7 / 9;
+    -ms-grid-column-align: center;
+        justify-self: center;
+  }
+}
+/*# sourceMappingURL=media.css.map */
