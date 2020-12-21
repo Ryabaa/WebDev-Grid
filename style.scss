@@ -249,7 +249,7 @@ a {
     background-size: cover;
     height: 520px;
     display: grid;
-    justify-content: center;
+    justify-items: center;
     align-content: center;
     row-gap: 30px;
 
@@ -365,6 +365,7 @@ a {
         align-items: center;
         grid-template-columns: repeat(5, auto);
         column-gap: 20px;
+        text-align: center;
 
         .footer-nav__item {
             width: 1px;

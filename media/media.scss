@@ -31,7 +31,7 @@
     }
 
     .header {
-        grid-template-columns: 1fr 5fr 1fr;
+        grid-template-columns: 1em 10fr 1em;
     }
 
     .idea,
@@ -77,7 +77,7 @@
     }
 
     .footer {
-        grid-template-columns: 1fr 3fr 1fr;
+        grid-template-columns: 1fr 5fr 1fr;
         grid-template-rows: repeat(3, auto);
 
         &-nav {
@@ -93,6 +93,33 @@
         &-text {
             grid-column: 2 / 3;
             grid-row: 3 / 4;
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .idea,
+    .code {
+        .section-image {
+            width: 240px;
+            height: 340px;
+        }
+    }
+
+    .community {
+        height: 600px;
+    }
+
+    .newsletter {
+        .form {
+            width: 300px;
+        }
+    }
+
+    .download {
+        .download-container {
+            grid-template-columns: 1fr;
+            row-gap: 20px;
         }
     }
 }
