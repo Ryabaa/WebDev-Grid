@@ -1,3 +1,16 @@
+$section-bg: #f5f6f7;
+$header-font-color: #ffffffcc;
+$title-color: #373737;
+$text-color: #4e4e4e;
+$link-color: #00afdb;
+$link-color-hover: #009cc2;
+
+/*--------------------------------*/
+
+html {
+    font-size: 14px;
+}
+
 body,
 h1,
 h2,
@@ -14,19 +27,19 @@ a {
 }
 
 .text {
-    font-size: 14px;
     font-weight: 400;
     line-height: 140%;
+    color: $text-color;
 }
 
 .title {
     font-weight: bold;
     text-transform: uppercase;
+    letter-spacing: 1px;
+    color: $title-color;
 }
 
-$header-font: #ffffffcc;
-
-.header-hero-section {
+.header-hero {
     background: url(./img/bg-image.png) center;
     background-size: cover;
     min-height: 788px;
@@ -50,27 +63,24 @@ $header-font: #ffffffcc;
             color: white;
             font-weight: 500;
             text-decoration: underline;
-        }
 
-        .nav-underline:hover {
-            color: $header-font;
+            &:hover {
+                color: $header-font-color;
+            }
         }
 
         .nav-link {
-            color: $header-font;
-        }
+            color: $header-font-color;
 
-        .nav-link:hover {
-            color: white;
+            &:hover {
+                color: white;
+            }
         }
     }
 }
 
-$blue: #00afdb;
-$blue-hover: #009cc2;
-
 .link-blue {
-    background: $blue;
+    background: $link-color;
     color: white;
     text-transform: uppercase;
     display: flex;
@@ -78,13 +88,12 @@ $blue-hover: #009cc2;
     align-items: center;
     width: 184px;
     height: 46px;
-    font-size: 14px;
     font-weight: bold;
     letter-spacing: 0.01em;
 }
 
 .link-blue:hover {
-    background: $blue-hover;
+    background: $link-color-hover;
 }
 
 .hero {
@@ -97,7 +106,7 @@ $blue-hover: #009cc2;
 
     &-title {
         color: white;
-        font-size: 64px;
+        font-size: 4.57rem;
         line-height: 75px;
         grid-row: 3 / 4;
         text-align: center;
@@ -107,7 +116,7 @@ $blue-hover: #009cc2;
         text-align: center;
         color: white;
         max-width: 500px;
-        font-size: 18px;
+        font-size: 1.28rem;
         letter-spacing: 0.01em;
         grid-row: 4 / 5;
     }
@@ -122,18 +131,6 @@ $blue-hover: #009cc2;
         grid-template-columns: repeat(4, 1fr);
         column-gap: 30px;
     }
-}
-
-$title: #373737;
-$text: #4e4e4e;
-
-@mixin title {
-    letter-spacing: 1px;
-    color: $title;
-}
-
-@mixin text {
-    color: $text;
 }
 
 @mixin section {
@@ -157,14 +154,12 @@ $text: #4e4e4e;
         .section-title {
             max-width: 370px;
             grid-column: 2 / 3;
-            font-size: 24px;
-            @include title;
+            font-size: 1.66rem;
         }
 
         .section-text {
             font-weight: 500;
             grid-column: 2 / 3;
-            @include text;
         }
 
         .section-button {
@@ -179,16 +174,14 @@ $text: #4e4e4e;
     }
 }
 
-.idea-section {
+.idea {
     @include section;
 }
 
-$light: #f5f6f7;
-
-.community-section {
+.community {
     height: 504px;
     padding-right: 50px;
-    background: $light;
+    background: $section-bg;
     display: grid;
     grid-template-columns: 7em auto 300px 300px;
     grid-template-rows: repeat(10, 1fr);
@@ -196,7 +189,7 @@ $light: #f5f6f7;
     justify-items: end;
     column-gap: 30px;
 
-    .community-container {
+    &-container {
         display: grid;
         grid-template-rows: repeat(3, auto);
         grid-column: 2 / 3;
@@ -204,36 +197,34 @@ $light: #f5f6f7;
         justify-self: start;
         justify-items: center;
         grid-row: 4 / 8;
-
-        .community-title {
-            @include title;
-            text-align: center;
-            font-weight: 500;
-            font-size: 16px;
-            letter-spacing: 2.4px;
-        }
-
-        .community-text {
-            text-align: center;
-            max-width: 300px;
-            @include text;
-        }
     }
 
-    .community-image-1 {
+    &-title {
+        text-align: center;
+        font-weight: 500;
+        font-size: 1.14rem;
+        letter-spacing: 2.4px;
+    }
+
+    &-text {
+        text-align: center;
+        max-width: 300px;
+    }
+
+    &-image-1 {
         grid-row: 3 / 9;
         grid-column: 3 / 4;
         width: 300px;
     }
 
-    .community-image-2 {
+    &-image-2 {
         width: 300px;
         grid-row: 3 / 9;
         grid-column: 4 / 5;
     }
 }
 
-.code-section {
+.code {
     @include section;
     .section-container {
         grid-column: 3 / 4;
@@ -246,7 +237,7 @@ $light: #f5f6f7;
     }
 }
 
-.newsletter-section {
+.newsletter {
     background: url(./img/notebook-bg.png);
     background-size: cover;
     height: 520px;
@@ -255,10 +246,10 @@ $light: #f5f6f7;
     align-content: center;
     row-gap: 30px;
 
-    .newsletter-title {
+    &-title {
         color: white;
         text-align: center;
-        font-size: 24px;
+        font-size: 1.66rem;
         letter-spacing: 1px;
     }
 
@@ -290,6 +281,67 @@ $light: #f5f6f7;
 
         .input-button:focus {
             outline: none;
+        }
+    }
+}
+
+.download {
+    display: grid;
+    height: 464px;
+    background: $section-bg;
+    align-items: end;
+    justify-items: center;
+    grid-template-rows: repeat(9, 1fr);
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+
+    &-title {
+        grid-row: 4 / 5;
+        font-size: 1.66rem;
+    }
+
+    &-text {
+        max-width: 480px;
+        text-align: center;
+        grid-row: 5 / 6;
+    }
+
+    &-container {
+        grid-row: 6 / 7;
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        column-gap: 30px;
+
+        .download-container-button {
+            display: grid;
+            width: 185px;
+            height: 46px;
+            grid-template-columns: 5fr 1fr;
+
+            .download-button {
+                width: 125px;
+                grid-column: 1 / 2;
+            }
+
+            .download-icon-container {
+                grid-column: 2 / 3;
+                width: 60px;
+                background: $link-color-hover;
+                justify-self: end;
+                display: grid;
+                justify-items: center;
+                align-items: center;
+            }
+        }
+
+        &-container-button-1 {
+            justify-self: start;
+            grid-column: 1 / 2;
+        }
+
+        &-container-button-2 {
+            justify-self: end;
+            grid-column: 2 / 3;
         }
     }
 }
