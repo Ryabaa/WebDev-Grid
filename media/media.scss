@@ -26,6 +26,10 @@
 }
 
 @media (max-width: 710px) {
+    html {
+        font-size: 15.5px;
+    }
+
     .header {
         grid-template-columns: 1fr 5fr 1fr;
     }

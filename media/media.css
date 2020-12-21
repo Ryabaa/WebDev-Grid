@@ -32,6 +32,9 @@
 }
 
 @media (max-width: 710px) {
+  html {
+    font-size: 15.5px;
+  }
   .header {
     -ms-grid-columns: 1fr 5fr 1fr;
         grid-template-columns: 1fr 5fr 1fr;
