@@ -176,7 +176,7 @@ a {
       grid-template-columns: 7em 3fr 3fr 7em;
   -ms-grid-rows: (1fr)[10];
       grid-template-rows: repeat(10, 1fr);
-  height: 840px;
+  min-height: 840px;
   justify-items: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -306,7 +306,7 @@ a {
       grid-template-columns: 7em 3fr 3fr 7em;
   -ms-grid-rows: (1fr)[10];
       grid-template-rows: repeat(10, 1fr);
-  height: 840px;
+  min-height: 840px;
   justify-items: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;

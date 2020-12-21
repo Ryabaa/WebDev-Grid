@@ -145,7 +145,7 @@ a {
     display: grid;
     grid-template-columns: 7em 3fr 3fr 7em;
     grid-template-rows: repeat(10, 1fr);
-    height: 840px;
+    min-height: 840px;
     justify-items: flex-start;
     align-items: center;
     column-gap: 30px;
