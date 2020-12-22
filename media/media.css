@@ -46,7 +46,7 @@
     justify-items: start;
     -webkit-column-gap: 10px;
             column-gap: 10px;
-    max-height: 840px;
+    height: 840px;
   }
   .idea .section-container,
   .code .section-container {
@@ -137,6 +137,9 @@
   .code .section-image {
     width: 240px;
     height: 340px;
+  }
+  .idea {
+    height: 1020px;
   }
   .community {
     height: 600px;

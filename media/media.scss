@@ -39,7 +39,7 @@
         grid-template-columns: 1em 1fr 5fr 1fr 1em;
         justify-items: start;
         column-gap: 10px;
-        max-height: 840px;
+        height: 840px;
 
         .section-container {
             grid-row: 7 / 10;
@@ -104,6 +104,10 @@
             width: 240px;
             height: 340px;
         }
+    }
+
+    .idea {
+        height: 1020px;
     }
 
     .community {

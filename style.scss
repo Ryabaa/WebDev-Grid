@@ -1,9 +1,15 @@
-$section-bg: #f5f6f7;
+$section-bg-primary: #f5f6f7;
+$section-bg-secondary: #ffffff;
+$section-bg-tertiary: #000000;
 $font-color-primary: #ffffffcc;
+$font-color-secondary: #ffffff;
 $title-color: #373737;
 $text-color: #4e4e4e;
 $link-color: #00afdb;
 $link-color-hover: #009cc2;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
 
 /*--------------------------------*/
 
@@ -25,19 +31,28 @@ p,
 a {
     margin: 0;
     font-size: 100%;
-    font-weight: normal;
+    font-weight: $font-weight-normal;
     font-family: "Roboto";
     text-decoration: none;
 }
 
+@mixin transistion {
+    transition: all 0.3s ease;
+}
+
+@mixin grid($justify, $align) {
+    justify-items: $justify;
+    align-items: $align;
+}
+
 .text {
-    font-weight: 400;
+    font-weight: $font-weight-normal;
     line-height: 140%;
     color: $text-color;
 }
 
 .title {
-    font-weight: bold;
+    font-weight: $font-weight-bold;
     text-transform: uppercase;
     letter-spacing: 1px;
     color: $title-color;
@@ -59,15 +74,14 @@ a {
         display: grid;
         grid-column: 2 / 3;
         grid-template-columns: repeat(5, 1fr);
-        align-items: center;
-        justify-items: center;
+        @include grid(center, center);
         column-gap: minmax(80px);
 
         .nav-underline {
-            color: white;
-            font-weight: 500;
+            color: $font-color-secondary;
+            font-weight: $font-weight-medium;
             text-decoration: underline;
-            transition: all 0.3s ease;
+            @include transistion;
 
             &:hover {
                 color: $font-color-primary;
@@ -76,10 +90,10 @@ a {
 
         .nav-link {
             color: $font-color-primary;
-            transition: all 0.3s ease;
+            @include transistion;
 
             &:hover {
-                color: white;
+                color: $font-color-secondary;
             }
         }
     }
@@ -87,16 +101,16 @@ a {
 
 .link-blue {
     background: $link-color;
-    color: white;
+    color: $font-color-secondary;
     text-transform: uppercase;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 184px;
     height: 46px;
-    font-weight: bold;
+    font-weight: $font-weight-bold;
     letter-spacing: 0.01em;
-    transition: all 0.3s ease;
+    @include transistion;
 }
 
 .link-blue:hover {
@@ -105,14 +119,12 @@ a {
 
 .hero {
     display: grid;
-    justify-items: center;
-    align-content: center;
-    align-items: flex-end;
+    @include grid(center, end);
     grid-template-rows: repeat(9, 0.7fr);
     padding: 0 20px;
 
     &-title {
-        color: white;
+        color: $font-color-secondary;
         font-size: 4.57rem;
         line-height: 75px;
         grid-row: 3 / 4;
@@ -121,7 +133,7 @@ a {
 
     &-text {
         text-align: center;
-        color: white;
+        color: $font-color-secondary;
         max-width: 500px;
         font-size: 1.28rem;
         letter-spacing: 0.01em;
@@ -141,13 +153,12 @@ a {
 }
 
 @mixin section {
-    background-color: white;
+    background-color: $font-color-secondary;
     display: grid;
     grid-template-columns: 7em 3fr 3fr 7em;
     grid-template-rows: repeat(10, 1fr);
     min-height: 840px;
-    justify-items: flex-start;
-    align-items: center;
+    @include grid(center, end);
     column-gap: 30px;
 
     .section-container {
@@ -165,7 +176,7 @@ a {
         }
 
         .section-text {
-            font-weight: 500;
+            font-weight: $font-weight-medium;
             grid-column: 2 / 3;
         }
 
@@ -188,12 +199,11 @@ a {
 .community {
     height: 504px;
     padding-right: 50px;
-    background: $section-bg;
+    background: $section-bg-primary;
     display: grid;
     grid-template-columns: 7em auto 300px 300px;
     grid-template-rows: repeat(10, 1fr);
-    align-items: center;
-    justify-items: end;
+    @include grid(end, center);
     column-gap: 30px;
 
     &-container {
@@ -208,7 +218,7 @@ a {
 
     &-title {
         text-align: center;
-        font-weight: 500;
+        font-weight: $font-weight-medium;
         font-size: 1.14rem;
         letter-spacing: 2.4px;
     }
@@ -249,12 +259,12 @@ a {
     background-size: cover;
     height: 520px;
     display: grid;
-    justify-items: center;
+    @include grid(center, center);
     align-content: center;
     row-gap: 30px;
 
     &-title {
-        color: white;
+        color: $font-color-secondary;
         text-align: center;
         font-size: 1.66rem;
         letter-spacing: 1px;
@@ -295,9 +305,8 @@ a {
 .download {
     display: grid;
     height: 464px;
-    background: $section-bg;
-    align-items: end;
-    justify-items: center;
+    background: $section-bg-primary;
+    @include grid(center, end);
     grid-template-rows: repeat(9, 1fr);
     grid-template-columns: 1fr;
     row-gap: 20px;
@@ -336,8 +345,7 @@ a {
                 background: $link-color-hover;
                 justify-self: end;
                 display: grid;
-                justify-items: center;
-                align-items: center;
+                @include grid(center, center);
             }
         }
 
@@ -354,15 +362,14 @@ a {
 
 .footer {
     height: 185px;
-    background: black;
+    background: $section-bg-tertiary;
     display: grid;
-    justify-items: center;
-    align-items: center;
+    @include grid(center, center);
     grid-template-columns: 3fr 1fr 3fr;
 
     &-nav {
         display: grid;
-        align-items: center;
+        @include grid(center, center);
         grid-template-columns: repeat(5, auto);
         column-gap: 20px;
         text-align: center;
@@ -380,8 +387,8 @@ a {
         }
 
         .footer-nav__link {
-            color: white;
-            transition: all 0.3s ease;
+            color: $font-color-secondary;
+            @include transistion;
 
             &:hover {
                 color: $font-color-primary;
@@ -404,9 +411,9 @@ a {
     }
 
     &-text__link {
-        color: white;
+        color: $font-color-secondary;
         letter-spacing: 1px;
-        transition: all 0.5s ease;
+        @include transistion;
 
         &:hover {
             color: #818181;
